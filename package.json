@@ -1,0 +1,22 @@
+{
+  "name": "terras-raras-brasil-remotion",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Vídeo jornalístico em Remotion sobre Terras Raras e o Potencial Estratégico do Brasil.",
+  "scripts": {
+    "dev": "remotion preview",
+    "render": "remotion render TerrasRarasBrasil downloads/final/terras_raras_brasil_2026_v1.mp4",
+    "build": "remotion bundle",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "remotion": "^4.0.306",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "typescript": "^5.7.3"
+  }
+}
