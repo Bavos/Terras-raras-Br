@@ -1,0 +1,11 @@
+node_modules/
+bundle/
+dist/
+out/
+build/
+*.mp4
+*.webm
+*.mov
+.DS_Store
+.env
+.env.*
