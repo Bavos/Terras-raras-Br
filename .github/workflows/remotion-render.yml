@@ -1,0 +1,55 @@
+name: Render Remotion Video
+
+on:
+  push:
+    branches:
+      - main
+      - master
+      - work
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  OUTPUT_VIDEO: downloads/final/terras_raras_brasil_2026_v1.mp4
+
+concurrency:
+  group: remotion-render-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  render:
+    name: Typecheck and render MP4
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+
+      - name: Typecheck TypeScript
+        run: npm run typecheck
+
+      - name: Bundle Remotion project
+        run: npm run build
+
+      - name: Render final MP4
+        run: npm run render
+
+      - name: Upload rendered video artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: terras-raras-brasil-2026-v1
+          path: ${{ env.OUTPUT_VIDEO }}
+          if-no-files-found: error
+          retention-days: 14
