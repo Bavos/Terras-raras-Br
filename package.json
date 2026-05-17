@@ -1,21 +1,37 @@
 {
-  "name": "terras-raras-brasil-remotion",
+  "name": "terras-raras-remotion",
   "version": "1.0.0",
   "private": true,
-  "description": "Vídeo jornalístico em Remotion sobre Terras Raras e o Potencial Estratégico do Brasil.",
+  "description": "Vídeo jornalístico em Remotion sobre Terras Raras e o potencial estratégico do Brasil.",
+  "author": "Codex",
+  "license": "MIT",
   "scripts": {
     "dev": "remotion preview",
     "render": "remotion render TerrasRarasBrasil downloads/final/terras_raras_brasil_2026_v1.mp4",
-    "build": "remotion bundle"
+    "build": "remotion bundle",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint . --ext .ts,.tsx",
+    "format": "prettier --write ."
   },
   "dependencies": {
-    "remotion": "^4.0.306",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "remotion": "^4.0.235"
   },
   "devDependencies": {
-    "@types/react": "^18.3.18",
-    "@types/react-dom": "^18.3.5",
-    "typescript": "^5.7.3"
+    "@remotion/cli": "^4.0.235",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@typescript-eslint/eslint-plugin": "^8.8.0",
+    "@typescript-eslint/parser": "^8.8.0",
+    "eslint": "^9.12.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-react": "^7.37.1",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "prettier": "^3.3.3",
+    "typescript": "^5.6.3"
+  },
+  "engines": {
+    "node": ">=20"
   }
 }
