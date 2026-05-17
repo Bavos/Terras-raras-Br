@@ -61,23 +61,6 @@ remotion/
 downloads/final/  Destino do render MP4.
 ```
 
-
-## GitHub Actions
-
-O projeto inclui o workflow `.github/workflows/remotion-render.yml` para rodar validação e renderização automaticamente no GitHub Actions.
-
-O workflow executa:
-
-1. checkout do repositório;
-2. setup do Node.js 20;
-3. instalação com `npm install --no-audit --no-fund`;
-4. checagem TypeScript com `npm run typecheck`;
-5. bundle com `npm run build`;
-6. renderização com `npm run render`;
-7. upload do MP4 como artifact.
-
-Também é possível disparar manualmente pelo botão **Run workflow** na aba Actions.
-
 ## Observações importantes
 
 Este projeto **não usa áudio, locução, imagens binárias, PNG, JPG, WebP, stock footage ou arquivos externos de mídia**. Todos os elementos visuais são criados com SVG, CSS, textos, formas e animações procedurais.

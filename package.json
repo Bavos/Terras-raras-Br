@@ -6,8 +6,7 @@
   "scripts": {
     "dev": "remotion preview",
     "render": "remotion render TerrasRarasBrasil downloads/final/terras_raras_brasil_2026_v1.mp4",
-    "build": "remotion bundle",
-    "typecheck": "tsc --noEmit"
+    "build": "remotion bundle"
   },
   "dependencies": {
     "remotion": "^4.0.306",
